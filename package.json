@@ -1,0 +1,17 @@
+{
+  "name": "baccrpc-maker",
+  "version": "1.0.0",
+  "description": "A Discord RPC maker",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js"
+  },
+  "author": "AaryanKh",
+  "license": "ISC",
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "electron": "^13.1.6",
+    "node-fetch": "^2.6.1",
+    "ws": "^7.5.2"
+  }
+}
