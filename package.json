@@ -7,7 +7,7 @@
     "start": "npx electron index.js"
   },
   "author": "AaryanKh",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "discord-rpc": "^4.0.1",
     "electron": "^13.1.6",
