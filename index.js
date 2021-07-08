@@ -55,11 +55,11 @@ async function setActivity() {
   }
 
   rpc.setActivity({
-    details: `${details}`,
-    state: `${state}`,
+    details: `${details || 'BaccRPC Maker'}`,
+    state: `${state || 'Having a Custom RPC'}`,
     startTimestamp,
     largeImageKey: 'logo-large',
-    largeImageText: `${imgText}`,
+    largeImageText: `${imgText || 'BaccRPC Maker'}`,
     smallImageKey: 'logo-small',
     smallImageText: 'BaccRPC Maker',
     instance: false,

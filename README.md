@@ -2,14 +2,14 @@
 ### A Custom Discord RPC Maker! No configuration required! A complete console app! No coding required either!
 ---
 # Pre-requesties
-### 1. Node.JS: Node.JS has to be installed on your device as it is going to be required to run the application.
+### 1. [Node.JS]: [Node.JS] has to be installed on your device as it is going to be required to run the application.
 ##
 ### 2. A [Discord] Account: You need to have a discord account as this application is for discord and having a custom RPC!
 ---
 # Installation
 ### Clone this repository by either [Github Desktop] or [Git Bash]:
 ```sh
-$git clone https://github.com/AaryanKhClasses/BaccSMP-Maker
+$git clone https://github.com/AaryanKhClasses/BaccRPC-Maker
 ```
 ### You can also download it as a ZIP file!
 ---
@@ -36,6 +36,7 @@ $npm start
 ### If you have any issues, either [Submit an issue here] or DM me on [Discord] (I'm Bacc™#8401)
 Thanks, bye <3
 ---
+[Node.JS]:https://nodejs.org
 [Github Desktop]:https://desktop.github.com
 [Git Bash]:https://git-scm.com
 [Discord]:https://discord.com
