@@ -1,7 +1,6 @@
 'use strict'
 
 const { app, BrowserWindow } = require('electron')
-const { state, details, imgText } = require('./renderer.js')
 const path = require('path')
 const url = require('url')
 const DiscordRPC = require('discord-rpc')
@@ -32,6 +31,18 @@ function createWindow() {
 
 app.on('ready', createWindow)
 
+let state = 'Having a custom RPC'
+    details = 'BaccRPC Maker'
+    imgText = 'BaccRPC Maker'
+
+function getInputValue() {
+  state = document.getElementById('state').value
+  details = document.getElementById('details').value
+  imgText = document.getElementById('imgText').value
+
+  console.log(state, details, imgText)
+}
+
 app.on('window-all-closed', () => {
   app.quit()
 })
@@ -55,11 +66,11 @@ async function setActivity() {
   }
 
   rpc.setActivity({
-    details: `${details || 'BaccRPC Maker'}`,
-    state: `${state || 'Having a Custom RPC'}`,
+    details: `${details}`,
+    state: `${state}`,
     startTimestamp,
     largeImageKey: 'logo-large',
-    largeImageText: `${imgText || 'BaccRPC Maker'}`,
+    largeImageText: `${imgText}`,
     smallImageKey: 'logo-small',
     smallImageText: 'BaccRPC Maker',
     instance: false,

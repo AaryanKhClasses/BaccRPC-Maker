@@ -4,7 +4,7 @@
   "description": "A Discord RPC maker",
   "main": "index.js",
   "scripts": {
-    "start": "electron index.js"
+    "start": "npx electron src/index.js"
   },
   "author": "AaryanKh",
   "license": "ISC",
