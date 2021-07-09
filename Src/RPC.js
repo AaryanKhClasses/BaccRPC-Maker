@@ -19,7 +19,6 @@ exports.setActivity = async function setActivity(state, details, imgText) {
 	client.setActivity({
 		state,
 		details,
-		imgText,
 		startTimestamp,
 		instance: false,
 	});
