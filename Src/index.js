@@ -1,7 +1,6 @@
 'use strict'
 
 const { app, BrowserWindow } = require('electron')
-const { state, details, imgText } = require('./renderer.js')
 const path = require('path')
 const url = require('url')
 const DiscordRPC = require('discord-rpc')

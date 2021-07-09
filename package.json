@@ -4,14 +4,11 @@
   "description": "A Discord RPC maker",
   "main": "index.js",
   "scripts": {
-    "start": "npx electron index.js"
+    "start": "npx electron ./Src/Server.js"
   },
   "author": "AaryanKh",
   "license": "MIT",
   "dependencies": {
-    "discord-rpc": "^4.0.1",
-    "electron": "^13.1.6",
-    "node-fetch": "^2.6.1",
-    "ws": "^7.5.2"
+    "electron": "^13.1.6"
   }
 }
