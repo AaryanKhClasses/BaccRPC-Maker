@@ -16,9 +16,9 @@ function getInputValue() {
 	const imgTextElem = document.getElementById("imgText");
 
 	// Getting the data we need
-	const state = stateElem.value;
-	const details = detailsElem.value;
-	const imgText = imgTextElem.value;
+	const state = stateElem.value.trim();
+	const details = detailsElem.value.trim();
+	const imgText = imgTextElem.value.trim();
 
 	// Sending the data through the WebSocket
 	ws.send(JSON.stringify(
@@ -28,10 +28,10 @@ function getInputValue() {
 			imgText,
 		},
 	));
-
+		
 	// Clearing the fields or else it looks bad
-	stateElem.innerText = detailsElem.innerText = imgTextElem.innerText = "";
-
+	stateElem.value = detailsElem.value = imgTextElem.value = "";
+		
 	// These gave us our required values, let the user know about the successful submission
 	alert("Submitted the data successfully!");
 }
