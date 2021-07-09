@@ -4,8 +4,10 @@
   "description": "A Discord RPC maker",
   "main": "index.js",
   "scripts": {
+
     "start": "npx electron ./Src/Server.js",
     "dev": "npx electromon ./Src/Server.js"
+
   },
   "author": "AaryanKh",
   "license": "MIT",

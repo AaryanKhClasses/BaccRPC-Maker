@@ -1,0 +1,13 @@
+body, html {
+  margin: 0px;
+  height: 100%;
+  cursor: default;
+  font-family: sans-serif;
+}
+
+h1, label, input {
+  text-align: center;
+  margin: auto;
+  padding-top: 1em;
+}
+
