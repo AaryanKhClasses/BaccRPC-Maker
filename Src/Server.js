@@ -3,8 +3,9 @@
 // ! Importing and Stuff
 const { app, BrowserWindow } = require("electron");
 const { join } = require("path");
-const { clientID, port, development } = require("../Config/config.json");
+const { port, development } = require("../Config/config.json");
 const WebSocket = require("ws");
+const { client: RPCClient, setActivity } = require("./RPC");
 
 const WebSocketServer = new WebSocket.Server({
 	port,
@@ -45,7 +46,7 @@ function createWindow() {
 			nodeIntegration: true,
 		},
 		autoHideMenuBar: true, // Simply hides the Menu Bar
-		center: true, // Shows the Window on the CENTER of the screen
+		center: true, // Shows the Window on the CENTER of the screen,
 	});
 
 	mainWindow.loadURL(`file:///${join(__dirname, "./Public/index.html")}`);
@@ -65,10 +66,22 @@ WebSocketServer.on("connection", (ws) => {
 		console.log("The connection was cut off...");
 	});
 
-	ws.on("message", (data) => {
-		data = JSON.parse(data);
+	RPCClient.on("ready", () => {
+		ws.send("RPC Status: Ready");
+		console.log("The RPC has loaded!");
+	});
+
+	RPCClient.login({ clientId: RPCClient.id })
+		.catch(err => {
+			ws.send(`RPC Error: ${err.message}`);
+		});
+
+	ws.on("message", (res) => {
+		const data = JSON.parse(res);
 		// Message is kinda like when we get some data from the Frontend
 		console.table(data);
 		// I need to parse the data, since it is sent using JSON.stringify, yikey
-	})
+
+		setActivity(data.state, data.details, data.imgText);
+	});
 });

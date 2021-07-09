@@ -4,12 +4,33 @@ const port = 8080;
 
 const ws = new WebSocket(`ws://localhost:${port}/`);
 
+let connected = false;
+
 // Unlike Node.js, there is no `on` alias for event Listening aaaaaaaaaaaaaa
 ws.addEventListener("open", () => {
 	console.log("The connection has been established!");
 });
 
+ws.addEventListener("message", (data) => {
+	const input = data.data.toLowerCase();
+	const warnElem = document.getElementById("warn-user");
+
+	if(input.startsWith("rpc status")) {
+		connected = true;
+
+		warnElem.innerText = "The RPC has been connected!";
+
+		return;
+	}
+
+	if(input.startsWith("rpc error")) {
+		warnElem.innerText = "Something went wrong while connecting the RPC... Please restart the app";
+		console.log(input.slice(11));
+	}
+});
+
 function getInputValue() {
+	if(!connected) return alert("RPC hasn't been loaded yet!");
 	// Getting the required elements...
 	const stateElem = document.getElementById("state");
 	const detailsElem = document.getElementById("details");
@@ -28,7 +49,7 @@ function getInputValue() {
 			imgText,
 		},
 	));
-		
+
 	// Clearing the fields or else it looks bad
 	stateElem.value = detailsElem.value = imgTextElem.value = "";
 		

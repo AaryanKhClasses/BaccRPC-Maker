@@ -6,11 +6,11 @@
   "scripts": {
     "start": "npx electron ./Src/Server.js",
     "dev": "npx electromon ./Src/Server.js"
-
   },
   "author": "AaryanKh",
   "license": "MIT",
   "dependencies": {
+    "discord-rpc": "^4.0.1",
     "electron": "^13.1.6",
     "ws": "^7.5.2"
   },
