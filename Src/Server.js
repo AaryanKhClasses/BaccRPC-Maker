@@ -3,7 +3,13 @@
 // ! Importing and Stuff
 const { app, BrowserWindow } = require("electron");
 const { join } = require("path");
-const { clientID } = require("../Config/config.json");
+const { clientID, port } = require("../Config/config.json");
+const WebSocket = require("ws");
+
+const WebSocketServer = new WebSocket.Server({
+	port,
+});
+// * Will work on this on the after the configuration of the Application, down in the code
 
 let mainWindow;
 
@@ -43,7 +49,6 @@ function createWindow() {
 		},
 	});
 
-	console.log(`file:///${join(__dirname, "./Public/index.html")}`);
 	mainWindow.loadURL(`file:///${join(__dirname, "./Public/index.html")}`);
 
 	mainWindow.on("closed", () => {
@@ -51,3 +56,20 @@ function createWindow() {
 		mainWindow = null;
 	});
 }
+
+// ! Working on the WebSocket
+WebSocketServer.on("connection", (ws) => {
+	console.log("Connected to the websocket!");
+
+	// ws is basically our connection with the client rn
+	ws.on("close", () => {
+		// Just logging the message, for Dev purposes
+		// Triggered when the App disconnects
+		console.log("The connection was cut off...");
+	});
+
+	ws.on("message", (data) => {
+		// Message is kinda like when we get some data from the Frontend
+		console.table(JSON.parse(data));
+	})
+});
