@@ -1,88 +1,31 @@
-'use strict'
-
-const { app, BrowserWindow } = require('electron')
-const path = require('path')
-const url = require('url')
-const DiscordRPC = require('discord-rpc')
-
-let mainWindow
-
-function createWindow() {
-  mainWindow = new BrowserWindow({
-    width: 340,
-    height: 380,
-    resizable: false,
-    titleBarStyle: 'hidden',
-    webPreferences: {
-      nodeIntegration: true,
-    },
-  })
-
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true,
-  }))
-
-  mainWindow.on('closed', () => {
-    mainWindow = null
-  })
-}
-
-app.on('ready', createWindow)
-
-let state = 'Having a custom RPC'
-    details = 'BaccRPC Maker'
-    imgText = 'BaccRPC Maker'
-
-function getInputValue() {
-  state = document.getElementById('state').value
-  details = document.getElementById('details').value
-  imgText = document.getElementById('imgText').value
-
-  console.log(state, details, imgText)
-}
-
-app.on('window-all-closed', () => {
-  app.quit()
-})
-
-app.on('activate', () => {
-  if (mainWindow === null) {
-    createWindow()
-  }
-})
-
-const clientId = '862252799545573396'
-
-DiscordRPC.register(clientId)
-
-const rpc = new DiscordRPC.Client({ transport: 'ipc' })
+const { register, Client } = require("discord-rpc")
+const { clientID } = require("../config.json")
 const startTimestamp = new Date()
 
-async function setActivity() {
-  if (!rpc || !mainWindow) {
-    return
-  }
+register(clientID)
 
-  rpc.setActivity({
-    details: `${details}`,
-    state: `${state}`,
-    startTimestamp,
-    largeImageKey: 'logo-large',
-    largeImageText: `${imgText}`,
-    smallImageKey: 'logo-small',
-    smallImageText: 'BaccRPC Maker',
-    instance: false,
-  })
-}
-
-rpc.on('ready', () => {
-  setActivity()
-
-  setInterval(() => {
-    setActivity()
-  }, 15e3)
+const client = new Client({
+	transport: "ipc",
 })
 
-rpc.login({ clientId }).catch(console.error)
+client.id = clientID
+
+/**
+ * @param {String} state 
+ * @param {String} details
+ * @param {String} imgText
+ */
+exports.setActivity = async function setActivity(state, details, imgText) {
+	client.setActivity({
+		state: state || 'Having a custom RPC',
+		details: details || 'BaccRPC Maker',
+		startTimestamp,
+		largeImageKey: 'logo-large',
+		largeImageText: imgText || 'BaccRPC Maker',
+		smallImageKey: 'logo-small',
+		smallImageText: 'BaccRPC Maker',
+		instance: false,
+	})
+}
+
+exports.client = client
