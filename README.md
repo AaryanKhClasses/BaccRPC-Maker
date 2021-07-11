@@ -25,6 +25,11 @@ $npm start
 ### Fill the "Details", "State" and "Image Text" fields while having [Discord] opened and click submit.
 ### There you go! You are now having a custom RPC, go and tell your friends about this too!
 ---
+# Contribution:
+### [AaryanKh]: Owner of this repository. Has done most of the front-end work (HTML & CSS) and some of the back-end work (JavaScript)
+### [SpiderMath]: Pog Contributor of this repository. Has done most of the back-end work (Javascript) and has done the directory management!<br>
+### Wanna contribute? Check out [CONTRIBUTING.md]
+---
 # Other Info:
 ### Check out:
 1. [SpiderMath]
@@ -45,3 +50,5 @@ Thanks, bye <3
 [Submit an issue here]:https://github.com/AaryanKhClasses/BaccRPC-Maker/issues
 [Request a PR here]:https://github.com/AaryanKhClasses/BaccRPC-Maker/pulls
 [follow me on github!]:https://github.com/AaryanKhClasses
+[AaryanKh]:https://github.com/AaryanKhClasses
+[CONTRIBUTING.md]:https://github.com/AaryanKhClasses/BaccRPC-Maker/tree/main/CONTRIBUTING.md

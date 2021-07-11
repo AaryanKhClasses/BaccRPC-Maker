@@ -4,12 +4,10 @@
   "description": "A Discord RPC maker",
   "main": "index.js",
   "scripts": {
-
-    "start": "npx electron ./Src/Server.js",
-    "dev": "npx electromon ./Src/Server.js"
-
+    "start": "npx electron ./src/server.js",
+    "dev": "npx electromon ./src/server.js"
   },
-  "author": "AaryanKh",
+  "author": "AaryanKh & SpiderMath",
   "license": "MIT",
   "dependencies": {
     "discord-rpc": "^4.0.1",

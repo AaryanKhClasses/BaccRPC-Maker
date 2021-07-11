@@ -1,22 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<title>BaccRPC Maker!</title>
 		<link rel=stylesheet href=style.css />
 	</head>
 	<body>
-		<h1>BaccRPC Maker</h1>
-		<h2 style="background-color: red;" id="warn-user">The RPC has not been connected, please wait a while till it is loaded...</h2>
-		<form>
-			<label for="state">State:</label>
-			<input type="text" id="state"><br><br>
-			<label for="details">Detail:</label>
-			<input type="text" id="details"><br><br>
-			<label for="imgText">Image Text:</label>
-			<input type="text" id="imgText"><br><br>
-			<button type="button" onClick="getInputValue()">Submit</button>
-		</form>
+		<div class="header">
+			<h1>BaccRPC Maker</h1>
+		</div>
+		<div class="form">
+			<form>
+				<label for="state">State:</label>
+				<input type="text" id="state" tabindex="1"><br><br>
+				<label for="details">Detail:</label>
+				<input type="text" id="details" tabindex="2"><br><br>
+				<label for="imgText">Image Text:</label>
+				<input type="text" id="imgText" tabindex="3"><br><br>
+				<button type="button" onClick="getInputValue()" tabindex="4">Submit</button>
+			</form>
+		</div>
+		<div class="preview">
+			<br><b id="playing">PLAYING A GAME</b><br>
+			<label id="largeImgTextLabel">BaccRPC Maker</label><br>
+			<img src="../logos/logo-large.jpg" height="100px" width="100px" id="imgLarge">
+			<div class="right_preview">
+				<label id="stateLabel">Having a custom RPC</label><br>
+				<label id="detailsLabel">BaccRPC Maker</label><br>
+			</div>
+		</div>
+		<div id="status">
+			<h2>Status:</h2>
+			<p id="status_label">The RPC has not been connected, please wait a while till it is loaded...</p>
+		</div>
+		<script src="preview.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>
