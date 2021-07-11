@@ -27,7 +27,7 @@ $npm start
 ---
 # Contribution:
 ### [AaryanKh]: Owner of this repository. Has done most of the front-end work (HTML & CSS) and some of the back-end work (JavaScript)
-### [SpiderMath]: Pog Contributor of this repository. Has done most of the back-end work (Javascript) and has done the directory management!<br>
+### [SpiderMath]: Useless Contributor of this repository. Has done most of the back-end work (Javascript) and has done the directory management!<br>
 ### Wanna contribute? Check out [CONTRIBUTING.md]
 ---
 # Other Info:
