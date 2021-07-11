@@ -39,7 +39,7 @@ function createWindow() {
 	// Instanciate the Window the user will see.
 	let mainWindow = new BrowserWindow({
 		width: 700, // Width of the window being opened
-		height: 280, // Height of the window
+		height: 327, // Height of the window
 		resizable: false, // Lets the user resize the stuff,
 		titleBarStyle: "hidden", // Style of the Window Title Bar (IDK why Aaryan wanted it to be hidden)
 		webPreferences: {

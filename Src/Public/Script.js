@@ -12,18 +12,19 @@ ws.addEventListener("open", () => {
 
 ws.addEventListener("message", (data) => {
 	const input = data.data.toLowerCase()
-	const warnElem = document.getElementById("warn-user")
+	const status = document.getElementById("status_label")
+	const statusDiv = document.getElementById("status")
 
 	if(input.startsWith("rpc status")) {
 		connected = true
 
-		warnElem.innerText = "The RPC has been connected!"
-		alert('The RPC has been connected!')
+		status.innerText = "The RPC has been connected!"
+		statusDiv.style.backgroundColor = 'green'
 		return
 	}
 
 	if(input.startsWith("rpc error")) {
-		warnElem.innerText = "Something went wrong while connecting the RPC... Please restart the app"
+		status.innerText = "Something went wrong while connecting the RPC... Please restart the app"
 		console.log(input.slice(11))
 	}
 })

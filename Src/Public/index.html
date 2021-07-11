@@ -8,7 +8,6 @@
 	<body>
 		<div class="header">
 			<h1>BaccRPC Maker</h1>
-		<!--<h2 id="warn-user">The RPC has not been connected, please wait a while till it is loaded...</h2>-->
 		</div>
 		<div class="form">
 			<form>
@@ -22,32 +21,19 @@
 			</form>
 		</div>
 		<div class="preview">
-			<label id="imgTextLabel">BaccRPC Maker</label><br>
+			<br><b id="playing">PLAYING A GAME</b><br>
+			<label id="largeImgTextLabel">BaccRPC Maker</label><br>
 			<img src="../logos/logo-large.jpg" height="100px" width="100px" id="imgLarge">
 			<div class="right_preview">
 				<label id="stateLabel">Having a custom RPC</label><br>
 				<label id="detailsLabel">BaccRPC Maker</label><br>
 			</div>
-			<script lang="javascript">
-				document.getElementById("state").onkeyup = function() {
-					let stateValue
-					if(document.getElementById('state').value !== '') { stateValue = document.getElementById('state').value } else { stateValue = 'Having a custom RPC' }
-					document.getElementById('stateLabel').textContent = stateValue
-				}
-
-				document.getElementById("details").onkeyup = function() {
-					let detailsValue
-					if(document.getElementById('details').value !== '') { detailsValue = document.getElementById('details').value } else { detailsValue = 'BaccRPC Maker' }
-					document.getElementById('detailsLabel').textContent = detailsValue
-				}
-
-				document.getElementById("imgText").onkeyup = function() {
-					let imgTextValue
-					if(document.getElementById('imgText').value !== '') { imgTextValue = document.getElementById('imgText').value } else { imgTextValue = 'BaccRPC Maker' }
-					document.getElementById('imgTextLabel').textContent = imgTextValue
-				}
-			</script>
 		</div>
+		<div id="status">
+			<h2>Status:</h2>
+			<p id="status_label">The RPC has not been connected, please wait a while till it is loaded...</p>
+		</div>
+		<script src="preview.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>

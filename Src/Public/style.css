@@ -26,12 +26,15 @@ input {
 .preview {
   width: 50%;
   float: left;
+  height: 163px;
+  background-color: white;
 }
 
 .form {
   width: 50%;
   float: left;
   background-color: lightslategray;
+  height: 163px;
 }
 
 button {
@@ -51,4 +54,28 @@ button:hover {
   float: right;
   margin-top: 35px;
   margin-right: 80px;
+}
+
+h2, p {
+  text-align: center;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+#status {
+  background-color: red;
+}
+
+#playing {
+  margin-left: 100px;
+}
+
+#largeImgTextLabel {
+  margin-left: 10px;
+}
+
+#stateLabel {
+  margin-bottom: 100px;
 }
