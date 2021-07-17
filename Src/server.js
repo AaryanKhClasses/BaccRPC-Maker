@@ -3,7 +3,7 @@
 // ! Importing and Stuff
 const { app, BrowserWindow } = require("electron")
 const { join } = require("path")
-const { port, development } = require("../config.json")
+const { port, development } = require("./Config/config.json")
 const WebSocket = require("ws")
 const { client: RPCClient, setActivity } = require(".")
 

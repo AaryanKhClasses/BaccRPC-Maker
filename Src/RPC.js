@@ -1,5 +1,5 @@
 const { register, Client } = require("discord-rpc")
-const { clientID } = require("../config.json")
+const { clientID } = require("./Config/Config.json")
 const startTimestamp = new Date()
 
 register(clientID)
